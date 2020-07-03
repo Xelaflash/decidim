@@ -65,6 +65,10 @@ module Decidim
       admin_route_proxy.send("edit_#{member_route_name}_path", resource, options)
     end
 
+    def admin_action(action, options = {})
+      admin_route_proxy.send("#{action}_#{member_route_name}_path", resource, options)
+    end
+
     private
 
     # Private: Build the route to the resource.
